@@ -2,11 +2,12 @@ const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 // expose a mysql db connection
-async function connect(){
+async function connect() {
 
   return await mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
+    port: process.env.DB_PORT,
     password: process.env.DB_PASSWORD,
     database: "employee_cms",
   });
@@ -17,6 +18,17 @@ module.exports = {
   connect
 };
 
+// const mysql = require("mysql2");
+// require('dotenv').config();
 
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   // port: process.env.DB_PORT,
+//   database: "employee_cms"
+// })
 
+// connection.connect();
 
+// module.exports = connection;

@@ -22,6 +22,9 @@ CREATE TABLE `employee_cms`.`roles` (
 ALTER TABLE `employee_cms`.`roles` 
 ADD INDEX `fk_roles_1_idx` (`department_id` ASC) VISIBLE;
 
+ALTER TABLE `employee_cms`.`roles` AUTO_INCREMENT = 20;
+
+
 ALTER TABLE `employee_cms`.`roles` 
 ADD CONSTRAINT `fk_roles_1`
   FOREIGN KEY (`department_id`)
@@ -39,6 +42,7 @@ CREATE TABLE `employee_cms`.`employees` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
 
+ALTER TABLE `employee_cms`.`employees` AUTO_INCREMENT = 100;
 
 ALTER TABLE `employee_cms`.`employees` 
 ADD INDEX `fk_employees_1_idx` (`role_id` ASC) VISIBLE;
@@ -53,6 +57,7 @@ ADD CONSTRAINT `fk_employees_1`
 
 ALTER TABLE `employee_cms`.`employees` 
 ADD INDEX `fk_employees_2_idx` (`manager_id` ASC) VISIBLE;
+
 
 ALTER TABLE `employee_cms`.`employees` 
 ADD CONSTRAINT `fk_employees_2`
