@@ -1,4 +1,4 @@
-USE employee_cms;
+USE employee_db;
 
 INSERT INTO departments (name)
 VALUES ("Production"),
